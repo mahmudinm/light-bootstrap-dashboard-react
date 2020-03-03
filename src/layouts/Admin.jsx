@@ -10,7 +10,6 @@ class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      _notificationSystem: null,
       color: "black",
       fixedClasses: "dropdown show-dropdown open"
     };
@@ -24,23 +23,22 @@ class Admin extends Component {
     ) {
       document.documentElement.classList.toggle("nav-open");
     }
-    if (e.history.action === "PUSH") {
-      document.documentElement.scrollTop = 0;
-      document.scrollingElement.scrollTop = 0;
-      this.refs.mainPanel.scrollTop = 0;
-    }
+    
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    this.refs.mainPanel.scrollTop = 0;
   }
 
   render() {
     return (
       <div className="wrapper">
-        <NotificationSystem ref="notificationSystem" />
         <Sidebar {...this.props} 
           color={this.state.color}/>
         <div id="main-panel" className="main-panel" ref="mainPanel">
           <AdminNavbar
             {...this.props}
           />
+          {this.props.children}
         </div>
       </div>
     );

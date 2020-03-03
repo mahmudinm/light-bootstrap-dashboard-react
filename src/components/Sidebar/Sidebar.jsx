@@ -67,7 +67,7 @@ class Sidebar extends Component {
             {this.state.width <= 991 ? <AdminNavbarLinks /> : null}
             <li>
               <NavLink
-                to={'/'}
+                to={'/admin/typography'}
                 className="nav-link"
                 activeClassName="active"
               >
