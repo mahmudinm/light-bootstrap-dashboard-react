@@ -18,7 +18,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -26,19 +26,13 @@ import "./assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "./assets/css/demo.css";
 import "./assets/css/pe-icon-7-stroke.css";
 
-import AdminRoute from "routes/Router/AdminRoute.jsx";
-import HomeRoute from "routes/Router/HomeRoute.jsx";
-
-import Auth from "views/Auth.jsx";
-import Typography from "views/Typography.jsx";
+import AdminRoutes from "routes/AdminRoutes.jsx";
+import HomeRoutes from "routes/HomeRoutes.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Switch>
-      
-      <AdminRoute exact path="/admin/typography" component={Typography} />
-      <HomeRoute exact path="/auth" component={Auth} />
-    </Switch>
+    <AdminRoutes />
+    <HomeRoutes />
   </BrowserRouter>,
   document.getElementById("root")
 );
