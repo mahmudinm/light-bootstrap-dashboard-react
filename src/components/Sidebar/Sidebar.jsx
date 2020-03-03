@@ -23,22 +23,23 @@ import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.jsx";
 import logo from "assets/img/reactlogo.png";
 
 class Sidebar extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       width: window.innerWidth
     };
   }
-  activeRoute(routeName) {
-    return this.props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
-  }
+
   updateDimensions() {
     this.setState({ width: window.innerWidth });
   }
+
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener("resize", this.updateDimensions.bind(this));
   }
+
   render() {
     return (
       <div
@@ -72,7 +73,17 @@ class Sidebar extends Component {
                 activeClassName="active"
               >
                 <i className={''} />
-                <p>Dashboard</p>
+                <p>Typography</p>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={'/admin/userprofile'}
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className={''} />
+                <p>User Profile</p>
               </NavLink>
             </li>
           </ul>
