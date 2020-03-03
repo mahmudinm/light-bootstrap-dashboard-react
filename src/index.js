@@ -26,9 +26,8 @@ import "./assets/sass/light-bootstrap-dashboard-react.scss?v=1.3.0";
 import "./assets/css/demo.css";
 import "./assets/css/pe-icon-7-stroke.css";
 
-
-import AdminLayout from "layouts/Admin.jsx";
-import AdminRoute from "components/Router/AdminRoute.jsx";
+import AdminRoute from "routes/Router/AdminRoute.jsx";
+import HomeRoute from "routes/Router/HomeRoute.jsx";
 
 import Auth from "views/Auth.jsx";
 import Typography from "views/Typography.jsx";
@@ -38,7 +37,7 @@ ReactDOM.render(
     <Switch>
       
       <AdminRoute exact path="/admin/typography" component={Typography} />
-      <Route path="/auth" component={Auth} />
+      <HomeRoute exact path="/auth" component={Auth} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

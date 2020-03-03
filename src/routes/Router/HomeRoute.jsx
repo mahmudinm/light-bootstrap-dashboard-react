@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Admin from "layouts/Admin.jsx";
+import Home from "containers/layouts/Home.jsx";
 
-const AdminRoute = ({ component: Component, ...rest }) => {
+const HomeRoute = ({ component: Component, ...rest }) => {
   return (
     <Route {...rest} render={props => (
-      <Admin>
+      <Home>
         <Component {...props} />
-      </Admin>
+      </Home>
     )} />
   )
 }
 
-export default AdminRoute;
+export default HomeRoute;
