@@ -40,21 +40,12 @@ class Sidebar extends Component {
     window.addEventListener("resize", this.updateDimensions.bind(this));
   }
   render() {
-    const sidebarBackground = {
-      backgroundImage: "url(" + this.props.image + ")"
-    };
     return (
       <div
         id="sidebar"
         className="sidebar"
         data-color={this.props.color}
-        data-image={this.props.image}
       >
-          {this.props.hasImage ? (
-            <div className="sidebar-background" style={sidebarBackground} />
-          ) : (
-            null
-          )}
         <div className="logo">
           <a
             href="https://www.creative-tim.com?ref=lbd-sidebar"
@@ -74,29 +65,16 @@ class Sidebar extends Component {
         <div className="sidebar-wrapper">
           <ul className="nav">
             {this.state.width <= 991 ? <AdminNavbarLinks /> : null}
-            {this.props.routes.map((prop, key) => {
-              if (!prop.redirect)
-                return (
-                  <li
-                    className={
-                      prop.upgrade
-                        ? "active active-pro"
-                        : this.activeRoute(prop.layout + prop.path)
-                    }
-                    key={key}
-                  >
-                    <NavLink
-                      to={prop.layout + prop.path}
-                      className="nav-link"
-                      activeClassName="active"
-                    >
-                      <i className={prop.icon} />
-                      <p>{prop.name}</p>
-                    </NavLink>
-                  </li>
-                );
-              return null;
-            })}
+            <li>
+              <NavLink
+                to={'/'}
+                className="nav-link"
+                activeClassName="active"
+              >
+                <i className={''} />
+                <p>Dashboard</p>
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>

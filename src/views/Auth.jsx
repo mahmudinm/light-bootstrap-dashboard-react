@@ -4,7 +4,7 @@ class Auth extends Component {
   render() {
     return (
       <div className="content">
-        <button className="btn btn-primary">Coba</button>
+        <button className="btn btn-info">Coba</button>
       </div>
     );
   }

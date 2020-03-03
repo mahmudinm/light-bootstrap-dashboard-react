@@ -28,6 +28,7 @@ class Header extends Component {
       sidebarExists: false
     };
   }
+  
   mobileSidebarToggle(e) {
     if (this.state.sidebarExists === false) {
       this.setState({
@@ -44,13 +45,11 @@ class Header extends Component {
     };
     document.body.appendChild(node);
   }
+
   render() {
     return (
       <Navbar fluid>
         <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#pablo">{this.props.brandText}</a>
-          </Navbar.Brand>
           <Navbar.Toggle onClick={this.mobileSidebarToggle} />
         </Navbar.Header>
         <Navbar.Collapse>
